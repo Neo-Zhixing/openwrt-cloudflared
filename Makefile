@@ -1,6 +1,6 @@
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=openwrt-cloudflared
+PKG_NAME:=cloudflared
 PKG_VERSION:=2022.7.1
 PKG_RELEASE:=2
 
@@ -43,10 +43,6 @@ endef
 
 MAKE_PATH:=$(GO_PKG_WORK_DIR_NAME)/build/src/$(GO_PKG)
 MAKE_VARS+=$(GO_PKG_VARS)
-
-define Build/Patch
-	$(CP) $(PKG_BUILD_DIR)/../cloudflared-$(PKG_VERSION)/* $(PKG_BUILD_DIR)
-endef
 
 DATE:=$(shell date -u '+%Y-%m-%d-%H%M UTC')
 VERSION_FLAGS:=-X "main.Version=$(PKG_VERSION)" -X "main.BuildTime=$(DATE)"
