@@ -10,9 +10,9 @@ jobs:
          path: cloudflared
      - name: Install OpenWrt SDK
        run: |
-         wget -O sdk.tar.xz https://downloads.openwrt.org/releases/22.03.0-rc4/targets/mediatek/mt7622/openwrt-sdk-22.03.0-rc4-mediatek-mt7622_gcc-11.2.0_musl.Linux-x86_64.tar.xz
+         wget -O sdk.tar.xz https://downloads.openwrt.org/releases/22.03.2/targets/mediatek/mt7622/openwrt-sdk-22.03.2-mediatek-mt7622_gcc-11.2.0_musl.Linux-x86_64.tar.xz
          tar -xf sdk.tar.xz
-         mv openwrt-sdk-22.03.0-rc4-mediatek-mt7622_gcc-11.2.0_musl.Linux-x86_64 sdk
+         mv openwrt-sdk-22.03.2-mediatek-mt7622_gcc-11.2.0_musl.Linux-x86_64 sdk
          cd ./sdk
          ln -s "$GITHUB_WORKSPACE/cloudflared" -t ./package
          ./scripts/feeds update -a
