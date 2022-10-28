@@ -20,7 +20,7 @@ jobs:
        run: |
          cd ./sdk
          cp ./package/cloudflared/.config ./
-         make package/cloudflared/compile
+         make package/cloudflared/compile -j1 V=s
      - name: Archive build result
        uses: actions/upload-artifact@v3
        with:
